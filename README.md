@@ -1,10 +1,10 @@
 ## rex
 基于redux和mobx思想的状态管理库 —— rex
 ## 设计思想
-在使用了mobx之后，我深深爱上了mobx那种面向对象创建store的思想，对redux的view -> dispatch -> action -> reducer -> store -> view深恶痛绝，就开始思考如果用class来创建store，使用action来包裹action函数，底层调用dispatch使用action会怎么样？
+在使用了mobx之后，我深深爱上了mobx那种面向对象创建store的思想，对redux的view -> dispatch -> action -> reducer -> store -> view深恶痛绝，就开始思考如果用class来创建store，使用action来包裹action函数，底层调用dispatch使用action会怎么样？    
 于是，rex就诞生了。
 ## state、action
-装饰器state用来包裹需要监听的状态，而action则是包裹改变state的函数，在外部调用action包裹方法的时候，内部会自动调用dispatch函数，以确保通知view层状态发生了变化。
+装饰器state用来包裹需要监听的状态，而action则是包裹改变state的函数，在外部调用action包裹方法的时候，内部会自动调用dispatch函数，以确保通知view层状态发生了变化。    
 如果不用state包裹的属性，那么就会当做一个私有属性来处理，不会出现在store中。
 ## BaseStore
 BaseStore是一个基础类，在BaseStore中封装了很多私有函数，用于处理一些底层的逻辑。创建store的时候一定要继承这个基础的BaseStore类。
